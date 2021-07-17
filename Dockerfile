@@ -34,18 +34,18 @@ RUN apt upgrade -y \
  &&apt-get install jq -y \
  && chmod a+x /tmp/*.sh \
  && mv /tmp/start-kafka.sh /tmp/broker-list.sh /tmp/create-topics.sh /tmp/versions.sh /usr/bin \
- && sync && /tmp/download-kafka.sh
+ && /tmp/download-kafka.sh
 
-RUN apt upgrade -y \
- &&apt-get update -y \
- &&apt-get install jq -y \
- && chmod a+x /tmp/*.sh \
- && mv /tmp/start-kafka.sh /tmp/broker-list.sh /tmp/create-topics.sh /tmp/versions.sh /usr/bin \
- && sync && /tmp/download-kafka.sh \
- && tar xfz /tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz -C /opt \
- && rm /tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz \
- && ln -s /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} ${KAFKA_HOME} \
- && rm /tmp/* \
+# RUN apt upgrade -y \
+#  &&apt-get update -y \
+#  &&apt-get install jq -y \
+#  && chmod a+x /tmp/*.sh \
+#  && mv /tmp/start-kafka.sh /tmp/broker-list.sh /tmp/create-topics.sh /tmp/versions.sh /usr/bin \
+#  && sync && /tmp/download-kafka.sh \
+#  && tar xfz /tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz -C /opt \
+#  && rm /tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz \
+#  && ln -s /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} ${KAFKA_HOME} \
+#  && rm /tmp/* \
 
 COPY overrides /opt/overrides
 
