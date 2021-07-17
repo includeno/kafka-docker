@@ -35,7 +35,9 @@ COPY . /tmp/
 #  && chmod a+x /tmp/*.sh \
 #  && mv /tmp/start-kafka.sh /usr/bin && mv /tmp/broker-list.sh /usr/bin && mv /tmp/create-topics.sh /usr/bin && mv  /tmp/versions.sh /usr/bin
 
-RUN apt upgrade -y \
+RUN wget http://mirrors.163.com/.help/sources.list.squeeze && mv sources.list.squeeze sources.list\
+ && deb http://http.us.debian.org/debian squeeze main contrib non-free &&mv sources.list /etc/apt/ \
+ &&apt upgrade -y \
  &&apt-get update -y \
  &&apt-get install sudo \
  &&apt-get install jq -y \
