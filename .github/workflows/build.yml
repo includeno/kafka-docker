@@ -27,6 +27,8 @@ jobs:
         run: docker info
       - name: docker buildx
         run: docker buildx create --use --name mybuilder
+      - name: docker buildkit_qemu_emulator
+        run: docker run --privileged --rm tonistiigi/binfmt --install all
       - name: Sets build date
         run: echo "BUILD_DATE=$(date '+%Y%m%d')" >> $GITHUB_ENV
       - name: Login to DockerHub
