@@ -26,15 +26,18 @@ ENV PATH=${PATH}:${KAFKA_HOME}/bin
 COPY download-kafka.sh start-kafka.sh broker-list.sh create-topics.sh versions.sh /tmp/
 
 RUN apt upgrade -y \
+ &&apt-get update -y \
  &&apt-get install jq -y
 
 RUN apt upgrade -y \
+ &&apt-get update -y \
  &&apt-get install jq -y \
  && chmod a+x /tmp/*.sh \
  && mv /tmp/start-kafka.sh /tmp/broker-list.sh /tmp/create-topics.sh /tmp/versions.sh /usr/bin \
  && sync && /tmp/download-kafka.sh \
 
 RUN apt upgrade -y \
+ &&apt-get update -y \
  &&apt-get install jq -y \
  && chmod a+x /tmp/*.sh \
  && mv /tmp/start-kafka.sh /tmp/broker-list.sh /tmp/create-topics.sh /tmp/versions.sh /usr/bin \
