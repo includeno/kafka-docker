@@ -34,7 +34,7 @@ RUN apt upgrade -y \
  &&apt-get install jq -y \
  && chmod a+x /tmp/*.sh \
  && mv /tmp/start-kafka.sh /tmp/broker-list.sh /tmp/create-topics.sh /tmp/versions.sh /usr/bin \
- && /tmp/download-kafka.sh
+ && download-kafka.sh
 
 # RUN apt upgrade -y \
 #  &&apt-get update -y \
