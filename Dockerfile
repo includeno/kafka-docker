@@ -33,7 +33,7 @@ RUN apt upgrade -y \
  &&apt-get update -y \
  &&apt-get install jq -y \
  && chmod a+x /tmp/*.sh \
- && mv /tmp/start-kafka.sh /tmp/broker-list.sh /tmp/create-topics.sh /tmp/versions.sh /usr/bin
+ && mv /tmp/start-kafka.sh /usr/bin && mv /tmp/broker-list.sh /usr/bin && mv /tmp/create-topics.sh /usr/bin && mv  /tmp/versions.sh /usr/bin
 
 RUN apt upgrade -y \
  &&apt-get update -y \
