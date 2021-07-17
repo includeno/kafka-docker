@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 # shellcheck disable=SC1091
 sudo source "/usr/bin/versions.sh"
