@@ -37,6 +37,7 @@ COPY download-kafka.sh start-kafka.sh broker-list.sh create-topics.sh versions.s
 
 RUN apt upgrade -y \
  &&apt-get update -y \
+ &&apt-get install apt-utils -y\
  &&apt-get install bash -y\
  &&apt-get install curl -y\
  &&apt-get install docker -y\
