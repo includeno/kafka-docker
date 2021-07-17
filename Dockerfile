@@ -44,8 +44,11 @@ RUN apt upgrade -y \
  &&apt-get install jq -y \
  && chmod a+x /tmp/*.sh \
  && mv /tmp/start-kafka.sh /usr/bin && mv /tmp/broker-list.sh /usr/bin && mv /tmp/create-topics.sh /usr/bin && mv  /tmp/versions.sh /usr/bin \
- &&ls -a /tmp && /tmp/download-kafka.sh
-
+ &&ls -a /tmp&& sync && /tmp/download-kafka.sh\
+ && tar xfz /tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz -C /opt \
+ && rm /tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz \
+ && ln -s /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} ${KAFKA_HOME} \
+ && rm /tmp/* \
 # RUN apt upgrade -y \
 #  &&apt-get update -y \
 #  &&apt-get install jq -y \
