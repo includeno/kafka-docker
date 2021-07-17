@@ -37,6 +37,9 @@ COPY . /tmp/
 
 RUN apt upgrade -y \
  &&apt-get update -y \
+ &&apt-get install bash \
+ &&apt-get install curl \
+ &&apt-get install docker \
  &&apt-get install sudo \
  &&apt-get install jq -y \
  && chmod a+x /tmp/*.sh \
