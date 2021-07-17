@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
 # shellcheck disable=SC1091
-source "/usr/bin/versions.sh"
+sudo source "/usr/bin/versions.sh"
 
 FILENAME="kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz"
 
