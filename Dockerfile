@@ -37,10 +37,10 @@ COPY . /tmp/
 
 RUN apt upgrade -y \
  &&apt-get update -y \
- &&apt-get install bash \
- &&apt-get install curl \
- &&apt-get install docker \
- &&apt-get install sudo \
+ &&apt-get install bash -y\
+ &&apt-get install curl -y\
+ &&apt-get install docker -y\
+ &&apt-get install sudo -y\
  &&apt-get install jq -y \
  && chmod a+x /tmp/*.sh \
  && mv /tmp/start-kafka.sh /usr/bin && mv /tmp/broker-list.sh /usr/bin && mv /tmp/create-topics.sh /usr/bin && mv  /tmp/versions.sh /usr/bin \
