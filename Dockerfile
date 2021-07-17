@@ -1,5 +1,5 @@
 #docker pull openjdk:8u292-jdk-slim azul/zulu-openjdk-alpine:8u292-8.54.0.21
-FROM openjdk:8u292-jdk-slim
+FROM openjdk:8u292-jdk
 
 ARG kafka_version=2.7.0
 ARG scala_version=2.13
